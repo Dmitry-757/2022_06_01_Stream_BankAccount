@@ -74,6 +74,12 @@ public class Main {
                 .sum()
                 + " EUR");
 
+        System.out.println("sum by second way: "+listAccounts.stream()
+                .filter(c -> CurrencyE.EUR.equals(c.getCurrency()))
+                .map(x -> x.getBalance())
+                .reduce(0.0, (a,b)->a+b)
+        +" EUR");
+
         System.out.println("\n8. Посчитать среднее значение (среднее арифметическое) для рублевых счетов");
         System.out.println("average is: " + listAccounts.stream()
                 .filter(c -> CurrencyE.RUB.equals(c.getCurrency()))
