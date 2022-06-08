@@ -93,26 +93,6 @@ public class Main {
         setByCurrency.forEach(System.out::println);
 
         System.out.println("\n10. Конвертировать все счета в доллары");
-
-        /*
-        BankAccount bankAccount = new BankAccount(CurrencyE.EUR, "1111111", 1);
-        System.out.println("before converting");
-        System.out.println(bankAccount.getCurrency());
-        System.out.println(bankAccount.getBalance());
-
-
-        System.out.println("after converting to usd");
-        bankAccount.convert(Converter::toConvert, CurrencyE.USD);
-        System.out.println(bankAccount.getCurrency());
-        System.out.println(bankAccount.getBalance());
-
-
-        System.out.println("after converting to rub");
-        bankAccount.convert(Converter::toConvert, CurrencyE.RUB);
-        System.out.println(bankAccount.getCurrency());
-        System.out.println(bankAccount.getBalance());
-        */
-
         System.out.println("\nbefore converting");
         listAccounts.forEach(System.out::println);
         listAccounts.forEach(bankAccount -> bankAccount.convert(Converter::toConvert, CurrencyE.USD));
