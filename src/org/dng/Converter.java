@@ -13,7 +13,7 @@ public class Converter {
 
         //begin transaction ))
         bankAccount.setCurrency(currency);
-        bankAccount.setBalance(currentAmount / currency.getRate());
+        bankAccount.setBalance( (double) ( (int)(currentAmount * 100 / currency.getRate()) )/100 );
         //commit transaction ))
 
     }
