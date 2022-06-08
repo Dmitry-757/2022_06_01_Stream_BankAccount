@@ -5,9 +5,9 @@ import java.util.Objects;
 public class BankAccount {
     private String id;
     private CurrencyE currency;
-    private int balance = 0;
+    private double balance;
 
-    public BankAccount(CurrencyE currency, String id, int balance) {
+    public BankAccount(CurrencyE currency, String id, double balance) {
         this.currency = currency;
         this.id = id;
         this.balance = balance;
@@ -25,11 +25,11 @@ public class BankAccount {
         this.currency = currency;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
@@ -46,4 +46,9 @@ public class BankAccount {
                 ", balance=" + balance +
                 '}';
     }
+
+    public void convert(ConvertableI cm, CurrencyE currency){
+        cm.convert(this, currency);
+    }
+
 }
